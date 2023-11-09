@@ -32,3 +32,19 @@ Set initial states of the tanks.
 Simulate pouring water between the tanks until the desired number of iterations is reached.
 Display the water levels in both tanks at each step.
 The algorithm simulates the pouring of water between the tanks and keeps track of the water levels at each step until the desired amount is achieved or the maximum number of iterations is reached. The code provides a step-by-step solution to the water jug problem.
+
+### Time Complexity
+
+The time complexity of the provided code is O(n), where n is the value of count.
+The while loop iterates count times, and each iteration involves constant time operations.
+Therefore, the time complexity is linear with respect to the value of count.
+Space Complexity:
+
+The space complexity is O(n), where n is the value of count.
+The arrays jug1 and jug2 have a length of count, and additional variables (j1, j2, count, i, and temp) use constant space.
+The space required by the arrays dominates the space complexity.
+In summary:
+
+Time Complexity: O(n)
+Space Complexity: O(n)
+These complexities indicate that the algorithm has a linear time and space complexity, making it relatively efficient for solving the water jug problem.
