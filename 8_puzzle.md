@@ -89,31 +89,14 @@ The A* algorithm combines the cost to reach a node (depth) with the heuristic es
 
 Time Complexity:
 
-The time complexity of DFS in this implementation is O(V + E), where V is the number of vertices (cells in the maze) and E is the number of edges (possible moves between cells).
-
-In the worst case, DFS might explore all cells in the maze, visiting each cell once. Therefore, the number of vertices visited is proportional to the total number of cells, which is the product of the number of rows (R) and the number of columns (C), i.e., V = R * C.
-
-In each cell, the algorithm considers up to four neighbors (up, down, left, right). So, the number of edges in the worst case is proportional to the number of vertices, i.e., E = O(V).
-
-Hence, the overall time complexity is O(V + E) = O(R * C).
-
+In the worst case, A* has an exponential time complexity.
+The Manhattan distance heuristic helps reduce the effective branching factor and can significantly improve the search efficiency.
+A* with a good heuristic often performs well in practice, especially compared to uninformed search algorithms.
+On average, the time complexity is often much better than brute-force search, making it a more practical approach for solving problems like the 8-puzzle.
 Space Complexity:
 
-The space complexity is determined by the auxiliary space required for the recursion stack and the storage of the path.
-
-Recursion Stack:
-
-The maximum depth of the recursion stack is limited by the maximum path length from the start to the end.
-In the worst case, where the path is the longest, the depth of the recursion stack is proportional to the number of cells visited.
-Therefore, the space complexity due to the recursion stack is O(V).
-Path Storage:
-
-The path list stores the visited cells, and its length is at most equal to the number of cells in the path.
-In the worst case, the length of the path is proportional to the number of cells visited.
-Therefore, the space complexity due to path storage is also O(V).
-Combining both components, the overall space complexity is O(V).
-
-In summary:
-
-Time Complexity: O(R * C)
-Space Complexity: O(V)
+The worst-case space complexity of A* is also exponential.
+The actual space requirements depend on the implementation and the pruning strategies used.
+A* uses a priority queue to manage the open set, and the space complexity can be reduced by storing and exploring only the most promising nodes.
+Efficient implementations, such as using an efficient data structure for the priority queue, can help mitigate space requirements.
+While the exact values for time and space complexity can vary based on implementation details and specific problem instances, the general trends outlined above provide a high-level understanding of the performance characteristics of A* with the Manhattan distance heuristic for the 8-puzzle problem.
