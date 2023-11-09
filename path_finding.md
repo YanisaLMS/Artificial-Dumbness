@@ -26,3 +26,37 @@ Create a maze represented by a 2D array with 0 for open cells and 1 for walls.
 Define starting (start) and ending (end) points.
 Call the dfs function with the maze, start, and end.
 If a path is found, print the maze with the path; otherwise, print "No path found."
+
+### Time Complexity
+
+Time Complexity:
+
+The time complexity of DFS in this implementation is O(V + E), where V is the number of vertices (cells in the maze) and E is the number of edges (possible moves between cells).
+
+In the worst case, DFS might explore all cells in the maze, visiting each cell once. Therefore, the number of vertices visited is proportional to the total number of cells, which is the product of the number of rows (R) and the number of columns (C), i.e., V = R * C.
+
+In each cell, the algorithm considers up to four neighbors (up, down, left, right). So, the number of edges in the worst case is proportional to the number of vertices, i.e., E = O(V).
+
+Hence, the overall time complexity is O(V + E) = O(R * C).
+
+Space Complexity:
+
+The space complexity is determined by the auxiliary space required for the recursion stack and the storage of the path.
+
+Recursion Stack:
+
+The maximum depth of the recursion stack is limited by the maximum path length from the start to the end.
+In the worst case, where the path is the longest, the depth of the recursion stack is proportional to the number of cells visited.
+Therefore, the space complexity due to the recursion stack is O(V).
+Path Storage:
+
+The path list stores the visited cells, and its length is at most equal to the number of cells in the path.
+In the worst case, the length of the path is proportional to the number of cells visited.
+Therefore, the space complexity due to path storage is also O(V).
+Combining both components, the overall space complexity is O(V).
+
+In summary:
+
+Time Complexity: O(R * C)
+Space Complexity: O(V)
+NEW
