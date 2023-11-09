@@ -36,3 +36,51 @@ The A* algorithm efficiently explores states, considering both the cost to reach
 Note:
 
 The A* algorithm guarantees optimality when using an admissible heuristic, ensuring that the heuristic never overestimates the cost to reach the goal. In this case, the Manhattan distance is an admissible heuristic for the 8-puzzle.
+
+
+## Explanation of Code and Functions
+
+PuzzleNode class:
+
+Represents a node in the puzzle state space.
+state: Current state of the puzzle.
+parent: Parent node.
+move: The move that led to this state.
+depth: Depth of the node in the search tree.
+cost: Cost of reaching this node from the start.
+manhattan_distance function:
+
+Calculates the Manhattan distance heuristic for the 8-puzzle problem.
+Input: state - current state of the puzzle, goal_state - goal state of the puzzle.
+Output: Manhattan distance heuristic value.
+get_blank_position function:
+
+Finds the position of the blank (0) in the puzzle.
+Input: state - current state of the puzzle.
+Output: Tuple representing the row and column of the blank.
+get_neighbors function:
+
+Generates neighboring states by making valid moves (up, down, left, right).
+Input: node - current node in the search.
+Output: List of neighboring nodes.
+print_solution function:
+
+Prints the solution path from the goal node to the initial node.
+Input: solution_node - the goal node.
+print_board function:
+
+Prints the current state of the puzzle.
+Input: state - current state of the puzzle.
+a_star function:
+
+Performs A* search to find the optimal solution to the 8-puzzle problem.
+Input: initial_state - initial state of the puzzle, goal_state - goal state of the puzzle.
+Output: Prints the solution path if found.
+Example usage:
+
+Create initial and goal states for the 8-puzzle.
+Call the a_star function with the initial and goal states.
+The algorithm uses a priority queue (open_set heap) to explore nodes with lower total cost first.
+Explores neighbors and updates their costs.
+Continues until the goal state is reached or no more nodes to explore.
+The A* algorithm combines the cost to reach a node (depth) with the heuristic estimate (manhattan_distance) to guide the search towards the goal efficiently.
